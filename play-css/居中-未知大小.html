@@ -1,0 +1,39 @@
+<html>
+  <div class="content">
+		<div class="center"></div>
+  </div>
+  <div class="flex-content"">
+		<div class="flex-center"></div>
+	</div>
+  <style>
+    .content {
+      position: relative;
+      background: yellow;
+      height: 600px;
+    }
+    .center {
+      height: 200px;
+      width: 200px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      /* 重点！！！ */
+      transform: translate(-50%, -50%);
+      background: gray;
+    }
+
+    .flex-content {
+      background: blue;
+      height: 600px;
+      display: flex;
+      /* 重点！！！ */
+      justify-content: center;
+      align-items: center;
+    }
+    .flex-center {
+      height: 200px;
+      width: 200px;
+      background: gray;
+    }
+  </style>
+</html>

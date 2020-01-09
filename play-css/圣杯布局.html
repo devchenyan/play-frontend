@@ -1,0 +1,42 @@
+<html>
+  <div class="container">
+    <div class="main"></div>
+    <div class="left"></div>
+    <div class="right"></div>
+  </div>
+  <style>
+    .container {
+      margin-left: 120px;
+      margin-right: 200px;
+    }
+    .main {
+      float: left;
+      height: 500px;
+      width: 100%;
+      background: gray;
+    }
+    .left {
+      position: relative;
+      left: -120px;
+      float: left;
+      /* https://www.w3cplus.com/css/the-definitive-guide-to-using-negative-margins.html */
+      /* 如果负margin等于实际宽度，则元素会被完全覆盖。
+      这是因为元素的完全宽度等于margin，padding，border，width相加而成，
+      所以如果负margin等于余下三者的和，那元素的实际宽度也就变成了0px */
+      margin-left: -100%;
+      height: 300px;
+      width: 120px;
+      background: red;
+    }
+    .right {
+      position: relative;
+      right: -200px;
+      float: right;
+      /* 重点啊重点！！！ */
+      margin-left: -100%;
+      height: 300px;
+      width: 200px;
+      background: blue;
+    }
+  </style>
+</html>
