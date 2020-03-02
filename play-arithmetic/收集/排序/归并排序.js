@@ -1,11 +1,5 @@
 let nums = [3,2,56,32,47,8,2,1,57,12,25,4]
 
-function swap(array, x, y) {
-  const tmpY = array[y]
-  array[y] = array[x]
-  array[x] = tmpY
-}
-
 /**
  * 分治法
  *
@@ -17,6 +11,10 @@ function swap(array, x, y) {
  *    创建一个 临时存储数组temp，比较两个数组 第一个元素，将 较小的取出元素 并 加入temp数组
  *    若 左右数组 有一个为空，那么此时 另一个数组 一定大于 temp中的所有元素，直接将 其所有元素加入 temp
 */
+
+/**
+ * 时间复杂度：O(nlogn)
+ */
 
 let sortArray = function mergeSort (nums) {
   if (nums.length < 2) return nums
