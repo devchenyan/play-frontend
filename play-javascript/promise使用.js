@@ -41,3 +41,18 @@ let p = new Promise((resolve, reject) => {})
 p.then(res => {})
 .catch(err => {})
 .finally(() => {})
+
+
+
+Promise.resolve()
+  .then(() => {
+    console.log("promise1"); // 2
+  })
+  .then(() => {
+    console.log("promise2"); // 3
+  });
+
+setTimeout(() => {
+  console.log("setTimeout"); // 4
+});
+console.log("end"); // 1

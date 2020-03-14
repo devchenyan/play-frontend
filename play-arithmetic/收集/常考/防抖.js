@@ -5,13 +5,15 @@
  * 总之，触发完事件 n 秒内不再触发事件，n秒后再执行。
  */
 
- function debounce(fn, delay) {
-   let timer = null
-   return function(...args) {
-     clearTimeout(timer)
-     timer = setTimeout(() => {
-       fn.apply(this, args)
-      //  fn.call(this, ...args)
-     }, delay)
-   }
- }
+function debounce(fn, ms, flag) {
+  let timer = null
+  return function (...args) {
+    clearTimeout(timer)
+    if (flag && !timer) {
+      fn.apply(this, args)
+    }
+    timer = setTimeout(() => {
+      fn.apply(this, args)
+    }, ms)
+  }
+}
