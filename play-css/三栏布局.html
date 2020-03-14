@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Layout</title>
+  <style>
+    html * {
+      margin: 0;
+      padding: 0;
+    }
+    .layout article div {
+      min-height: 100px;
+    }
+    section {
+      margin-top: 20px;
+    }
+    .left {
+        background-color: red;
+      }
+    .center {
+      background-color: yellow;
+    }
+    .right {
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <!-- 浮动 -->
+  <section class="layout float">
+    <style>
+      .layout.float .left {
+        float: left;
+        width: 300px;
+      }
+      .layout.float .right {
+        float: right;
+        width: 300px;
+      }
+      .layout.float .center {
+        margin-left: 300px;
+        margin-right: 300px;
+      }
+    </style>
+    <article class="left-right-center">
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="center">
+        <h1> 浮动解决方案</h1>
+        <p>中间内容</p>
+        <p>中间内容</p>
+        <p>中间内容</p>
+        <p>中间内容</p>
+        <p>中间内容</p>
+        <p>中间内容</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- 绝对定位 -->
+  <section class="layout absolute">
+    <style>
+      .layout.absolute .left-center-right>div {
+        position: absolute;
+      }
+      .layout.absolute .left {
+        left: 0;
+        width: 300px;
+      }
+      .layout.absolute .center {
+        left: 300px;
+        right: 300px;
+      }
+      .layout.absolute .right {
+        right: 0;
+        width: 300px;
+      }
+    </style>
+    <article class="left-center-right">
+      <div class="left"></div>
+      <div class="center">
+        <h1> 绝对定位解决方案</h1>
+        <p>中间内容</p>
+        <p>中间内容</p>
+        <p>中间内容</p>
+        <p>中间内容</p>
+        <p>中间内容</p>
+        <p>中间内容</p>
+      </div>
+      <div class="right"></div>
+    </article>
+  </section>
+
+  <!-- flexbox -->
+  <section class="layout flexbox">
+    <style>
+      .layout.flexbox {
+        margin-top: 200px;
+      }
+      .layout.flexbox .left-center-right {
+        display: flex;
+      }
+      .layout.flexbox .left {
+        width: 300px;
+      }
+      .layout.flexbox .center {
+        /* 自适应  */
+        flex: 1;
+      }
+      .layout.flexbox .right {
+        width: 300px;
+      }
+    </style>
+    <article class="left-center-right">
+      <div class="left"></div>
+      <div class="center">
+        <h1> flexbox解决方案</h1>
+        <p>中间内容</p>
+        <p>中间内容</p>
+        <p>中间内容</p>
+        <p>中间内容</p>
+        <p>中间内容</p>
+        <p>中间内容</p>
+      </div>
+      <div class="right"></div>
+    </article>
+  </section>
+
+  <!-- 表格布局 -->
+  <section class="layout table">
+    <style>
+      .layout.table .left-center-right {
+        display: table;
+        width: 100%;
+      }
+      .layout.table .left-center-right>div {
+        display: table-cell;
+      }
+      .layout.table .left {
+        width: 300px;
+      }
+      .layout.table .right {
+        width: 300px;
+      }
+    </style>
+    <article class="left-center-right">
+      <div class="left"></div>
+      <div class="center">
+        <h1> 表格解决方案</h1>
+        <p>中间内容</p>
+        <p>中间内容</p>
+        <p>中间内容</p>
+        <p>中间内容</p>
+        <p>中间内容</p>
+        <p>中间内容</p>
+      </div>
+      <div class="right"></div>
+    </article>
+  </section>
+
+  <!-- 网格布局 -->
+  <section class="layout grid">
+    <style>
+      .layout.grid .left-center-right {
+        display: grid;
+        width: 100%;
+        grid-template-rows: 100px;
+        grid-template-columns: 300px auto 300px;
+      }
+    </style>
+    <article class="left-center-right">
+      <div class="left"></div>
+      <div class="center">
+        <h1> 网格布局解决方案</h1>
+        <p>中间内容</p>
+        <p>中间内容</p>
+        <p>中间内容</p>
+        <p>中间内容</p>
+        <p>中间内容</p>
+        <p>中间内容</p>
+      </div>
+      <div class="right"></div>
+    </article>
+  </section>
+
+  <section class="layout shengbei">
+    <style>
+      .layout.shengbei .center-left-right{
+        margin-top: 80px;
+        margin-left: 300px;
+        margin-right: 300px;
+      }
+      .layout.shengbei .center {
+        float: left;
+        width: 100%;
+      }
+      .layout.shengbei .left {
+        position: relative;
+        left: -300px;
+        width: 300px;
+        float: left;
+        margin-left: -100%;
+      }
+      .layout.shengbei .right {
+        position: relative;
+        right: -300px;
+        width: 300px;
+        float: right;
+        margin-left: -100%;
+      }
+    </style>
+    <article class="center-left-right">
+      <div class="center">
+        <h1> 圣杯布局解决方案</h1>
+        <p>中间内容</p>
+        <p>中间内容</p>
+        <p>中间内容</p>
+        <p>中间内容</p>
+        <p>中间内容</p>
+        <p>中间内容</p>
+      </div>
+      <div class="left"></div>
+      <div class="right"></div>
+    </article>
+  </section>
+</body>
+</html>
+
+<!--
+  优缺点
+  不定高度的话，两边自动伸展： flexbox、table
+  那个实用
+
+  float：清楚浮动和周边的处理；兼容性好
+  absolute：快捷；可实用性差，因为脱离文档流，子元素也要脱离文档流
+  flexbox：解决前面的问题，移动端常用
+  table：兼容性好，但是表格高度只能是一样
+  grid：
+ -->

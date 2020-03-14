@@ -11,6 +11,10 @@ function swap(array, x, y) {
  * 如果： 当前元素 > 下一个元素 则 向上冒泡
 */
 
+/**
+ * 时间复杂度：O(n2)
+ */
+
 let sortArray = function bubbleSort(nums) {
   for (let i = 0; i < nums.length - 1; i ++) {
     // 前面已经排好的就不用再排了
